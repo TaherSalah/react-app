@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Home from "./../Home/Home";
+import { Link, Outlet } from 'react-router-dom';
 
 export default class Contacts extends Component {
   state = {
-    
+
     products: [
       {
         name: "taher salah",
@@ -96,16 +96,28 @@ export default class Contacts extends Component {
         isMarried: false,
       },
     ],
-  };    
+  };
 
   render() {
     return (
       <div>
-        <div className="bg-dark">
-          <div className="row">
-            {this.state.products.map((product) => (
-              <Home prods={product} />
-            ))}
+        <div className="row">
+          <div className="col-md-3 bg-danger">
+            <nav>
+              <ul>
+                <li>
+                  <Link to='services'> services</Link>
+                </li>
+                <li>
+                <Link to='projects'> projects</Link>
+
+                  
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="col-md-9 bg-success">
+            <Outlet/>
           </div>
         </div>
       </div>
