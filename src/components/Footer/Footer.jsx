@@ -2,15 +2,15 @@ import React, { Component } from "react";
 
 export default class Footer extends Component {
   state = {};
-componentWillUnmount(){
-  console.log('Footer component will unmount');
-}
+// componentWillUnmount(){
+//   console.log('Footer component will unmount');
+// }
   render() {
     // console.log(this.props.proData);
-    let { userId, id, title, body, onSale } = this.props.proData;
+    // let { userId, id, title, body, onSale } = this.props.proData;
     return (
       <>
-        <div className="col-md-4">
+        {/* <div className="col-md-4">
           <div className="m-4 p-5  bg-dark text-white position-relative text-center">
             <h1>{userId}</h1>
             <h1>{id}</h1>
@@ -51,6 +51,9 @@ componentWillUnmount(){
             </div>
           </div>
           
+        </div> */}
+        <div className="bg-dark fixed-bottom bottom-0 end-0 ">
+          <h1 className="text-white text-center">foooter</h1>
         </div>
       </>
     );
