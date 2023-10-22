@@ -154,30 +154,45 @@ export default class About extends Component {
       },
     ],
   };
-  // deleteItem = (id) => {
-  //   ///deep copy ///
-  //   let data = [...this.state.data];
+  deleteItem = (id) => {
 
-  //   ///update data ///
+    let products =this.state.data;
 
-  //   data = data.filter((product) => product.id !== id);
-  //   //setState
+    let index =products.indexOf(id);
 
-  //   this.setState({ data });
+    products =products.splice(index,2)
+    this.setState({products})
+    console.log(index);
+  }
 
-  //   console.log(id);
-  // };
 
-  // updateProduct(product){
-  //   let dataA = [...this.state.data];
+  increment =(currentProd)=>{
 
-  //   let currentIndex =dataA.indexOf(product);
+    let products=this.state.data;
 
-  //   dataA[currentIndex].id = dataA[currentIndex].id+1;
+currentProd.userId ++;
 
-  //   this.setState({data:dataA});
 
-  // }
+this.setState({products})
+    
+    console.log(currentProd);
+
+    
+
+    
+  }
+
+  decrementProd=(currentProd)=>{
+
+  let  products=this.state.data;
+
+    currentProd.userId--;
+
+    this.setState({products})
+
+    console.log('decrementProd')
+  }
+  
 
   render() {
     return (
@@ -188,8 +203,9 @@ export default class About extends Component {
               <Footer
                 key={data.id}
                 proData={data}
-                delete={this.deleteItem}
-                indexData={this.updateProduct}
+                deleteItem={this.deleteItem}
+                increment={this.increment}
+                decrementProd={this.decrementProd}
               />
             ))}
           </div>

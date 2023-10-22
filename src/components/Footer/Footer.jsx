@@ -4,7 +4,7 @@ export default class Footer extends Component {
   state = {};
 
   render() {
-    console.log(this.props);
+    // console.log(this.props.proData);
     let { userId, id, title, body, onSale } = this.props.proData;
     return (
       <>
@@ -24,20 +24,31 @@ export default class Footer extends Component {
               </div>
             )}
             <button
-              onClick={() => {
-              }}
+              onClick={() => this.props.deleteItem(this.props.proData)}
+              className="button my-4 btn btn-outline-success mx-5"
+            >
+              delete
+            </button>
+            <div className="col">
+
+              <div className="row">
+
+              <button
+              onClick={() => this.props.increment(this.props.proData)}
               className="button  btn btn-outline-success"
             >
               +
             </button>
             <button
-              onClick={() => {
-              }}
-              className="button  btn btn-outline-success mx-5"
+              onClick={() => this.props.decrementProd(this.props.proData)}
+              className="button my-5 btn btn-outline-success"
             >
-              delete
+              -
             </button>
+              </div>
+            </div>
           </div>
+          
         </div>
       </>
     );

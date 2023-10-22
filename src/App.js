@@ -7,9 +7,9 @@ import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 function App() {
   return (
     <>
-      <Contacts />
+      {/* <Contacts /> */}
       <About />
-      <Parent />
+      {/* <Parent /> */}
     </>
   );
 }

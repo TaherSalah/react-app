@@ -1,8 +1,22 @@
 import React, { Component } from "react";
 
 export default class Home extends Component {
+  state = {
+    id: 0,
+  };
+
+  contChange = () => {
+    let count = this.state.id;
+
+    count = this.state.id++;
+
+    this.setState({ count});
+  };
+
   render() {
-    console.log(this.props);
+    console.log('rrrrrrrrrrrrrr')
+
+    // console.log(this.props);
     let { name, email, phone, address, salary, gender, isMarried } =
       this.props.prods;
     return (
@@ -15,6 +29,8 @@ export default class Home extends Component {
           <h1>{salary}</h1>
           <h1>{gender}</h1>
           <h1>{isMarried}</h1>
+          <h2>{this.state.id}</h2>
+          <button onClick={this.contChange}>adddddddddddddddddd</button>
         </div>
       </div>
     );
