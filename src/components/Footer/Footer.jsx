@@ -2,7 +2,9 @@ import React, { Component } from "react";
 
 export default class Footer extends Component {
   state = {};
-
+componentWillUnmount(){
+  console.log('Footer component will unmount');
+}
   render() {
     // console.log(this.props.proData);
     let { userId, id, title, body, onSale } = this.props.proData;

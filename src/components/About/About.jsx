@@ -156,47 +156,60 @@ export default class About extends Component {
   };
   deleteItem = (id) => {
 
-    let products =this.state.data;
+    let products = this.state.data;
 
-    let index =products.indexOf(id);
+    let index = products.indexOf(id);
 
-    products =products.splice(index,2)
-    this.setState({products})
+    products = products.splice(index, 2)
+    this.setState({ products })
     console.log(index);
   }
 
 
-  increment =(currentProd)=>{
+  increment = (currentProd) => {
 
-    let products=this.state.data;
+    let products = this.state.data;
 
-currentProd.userId ++;
+    currentProd.userId++;
 
 
-this.setState({products})
-    
+    this.setState({ products })
+
     console.log(currentProd);
 
-    
 
-    
+
+
   }
 
-  decrementProd=(currentProd)=>{
+  decrementProd = (currentProd) => {
 
-  let  products=this.state.data;
+    let products = this.state.data;
 
     currentProd.userId--;
 
-    this.setState({products})
+    this.setState({ products })
 
     console.log('decrementProd')
   }
-  
 
+constructor(){
+  super();
+  console.log('CONST CALL');
+}
+componentDidMount(){
+  console.log('componentDidMount');
+
+}
+componentDidUpdate(prevProps,prevState){
+  console.log(prevProps);
+  console.log(prevState); 
+}
   render() {
+  console.log('render');
+
     return (
-      <> 
+      <>
         <div className="bg-danger ">
           <div className="row">
             {this.state.data.map((data) => (
